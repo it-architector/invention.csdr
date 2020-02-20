@@ -1,0 +1,6 @@
+#Список файлов в браузер#
+Options +Indexes
+
+#Кодировка#
+AddDefaultCharset UTF-8
+IndexOptions Charset=UTF-8
