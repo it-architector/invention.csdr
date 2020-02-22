@@ -33,12 +33,12 @@
         $GLOBALS['Места']    = {
             '1': {
                 'Смысл': 'Память интерфейса',
-                'Роль': {'Инкапсуляция': 'all'},
+                'Роль': {'Вместилище': 'all'},
                 'Связь': false,
                 'Вложение': {
                     '1.1': {
                         'Смысл': 'Параметры интерфейса',
-                        'Роль': {'Инкапсуляция': 'all'},
+                        'Роль': {'Вместилище': 'all'},
                         'Связь': false,
                         'Вложение': {
                             '1.1.1': {
@@ -63,22 +63,22 @@
                     },
                     '1.2': {
                         'Смысл': 'Шаблон страницы',
-                        'Роль': {'Инкапсуляция': 'all'},
+                        'Роль': {'Вместилище': 'all'},
                         'Связь': false,
                         'Вложение': {
                             '1.2.1': {
                                 'Смысл': 'Тэг html',
-                                'Роль': {'Инкапсуляция':'html'},
+                                'Роль': {'Вместилище':'html'},
                                 'Связь': false,
                                 'Вложение': {
                                     '1.2.1.1': {
                                         'Смысл': 'Тэг head',
-                                        'Роль': {'Инкапсуляция':'head'},
+                                        'Роль': {'Вместилище':'head'},
                                         'Связь': false,
                                         'Вложение': {
                                             '1.2.1.1.1': {
                                                 'Смысл': 'Заголовок страницы',
-                                                'Роль': {'Инкапсуляция':'title'},
+                                                'Роль': {'Вместилище':'title'},
                                                 'Связь': false,
                                                 'Вложение': {
                                                     '1.2.1.1.1.1': {
@@ -91,7 +91,7 @@
                                             },
                                             '1.2.1.1.2': {
                                                 'Смысл': 'Кодировка',
-                                                'Роль': {'Инкапсуляция':'meta'},
+                                                'Роль': {'Вместилище':'meta'},
                                                 'Связь': false,
                                                 'Вложение': {
                                                     '1.2.1.1.2.1': {
@@ -104,7 +104,7 @@
                                             },
                                             '1.2.1.1.3': {
                                                 'Смысл': 'Скрипты',
-                                                'Роль': {'Инкапсуляция':'script'},
+                                                'Роль': {'Вместилище':'script'},
                                                 'Связь': false,
                                                 'Вложение': {
                                                     '1.2.1.1.3.1': {
@@ -119,7 +119,7 @@
                                     },
                                     '1.2.1.2': {
                                         'Смысл': 'Тэг body',
-                                        'Роль': {'Инкапсуляция':'body'},
+                                        'Роль': {'Вместилище':'body'},
                                         'Связь': false,
                                         'Вложение': {
                                             '1.2.1.2.1': {
@@ -140,7 +140,7 @@
                                                 'Вложение': {
                                                     '1.2.1.2.2.1': {
                                                         'Смысл': 'Блок',
-                                                        'Роль': {'Инкапсуляция':'a'},
+                                                        'Роль': {'Вместилище':'a'},
                                                         'Связь': false,
                                                         'Вложение': {
                                                             '1.2.1.2.2.1.1': {
@@ -198,7 +198,7 @@
                                             },
                                             '1.2.1.2.3': {
                                                 'Смысл': 'На случай когда браузер не работает со скриптами',
-                                                'Роль': {'Инкапсуляция':'noscript'},
+                                                'Роль': {'Вместилище':'noscript'},
                                                 'Связь': false,
                                                 'Вложение': false
                                             },
@@ -377,7 +377,7 @@
                                 var $keys = Object.keys($opportunities['rights']);
                                 var $encapsulation = $keys[0];
 
-                                /*если есть особая инкапсуляция*/
+                                /*если есть особая Вместилище*/
                                 if(typeof($encapsulation) == 'string' && ($encapsulation.match(/[constant|variation]/i)) != null){
 
                                     var $encapsulation_verification = [];
@@ -402,11 +402,11 @@
 
                                     }
 
-                                    /*инкапсуляция OR сработала*/
+                                    /*Вместилище OR сработала*/
                                     if(($encapsulation.match(/variation/i)) != null && $encapsulation_verification.includes(true) == true){
                                         $verification = true;
                                     }
-                                    /*инкапсуляция AND сработала*/
+                                    /*Вместилище AND сработала*/
                                     else if(($encapsulation.match(/constant/i)) != null && $encapsulation_verification.includes(false) == false){
                                         $verification = true;
                                     }
@@ -498,7 +498,7 @@
                                         /*переходим во вложенность*/
                                         $link = $link[$last_place_id];
                                         /*запоминаем последний тэг*/
-                                        if($last_place_id!=$opportunities['child_place_id'] && typeof($link['Роль']['Инкапсуляция']) != "undefined" && $link['Роль']['Инкапсуляция']!='all'){
+                                        if($last_place_id!=$opportunities['child_place_id'] && typeof($link['Роль']['Вместилище']) != "undefined" && $link['Роль']['Вместилище']!='all'){
                                             $parent_id = $last_place_id;
                                         }
                                     }, $link, $opportunities, $parent_id, $last_place_id);
@@ -644,7 +644,7 @@
                                 },
                                 /*алгоритм активации ролей*/
                                 'activation_roles' : {
-                                    'Инкапсуляция': {
+                                    'Вместилище': {
                                         'all': function ($opportunities = {}) {
                                             /*ничего не делаем*/
                                         },
@@ -652,7 +652,7 @@
                                         'other': function ($opportunities = {'place_id':null,'place_value':null,'parent_additional_id':null,'helper_algorithms':{'get_parent_link':null,'get_parent_id':null}}) {
 
                                             /*создаём новый тэг*/
-                                            var $new_tag = document.createElement($opportunities['place_value']['Роль']['Инкапсуляция']);
+                                            var $new_tag = document.createElement($opportunities['place_value']['Роль']['Вместилище']);
 
                                             /*присваиваем индетификатор*/
                                             $new_tag.setAttribute("id", $opportunities['place_id'] + $opportunities['parent_additional_id']);

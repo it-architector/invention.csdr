@@ -28,12 +28,12 @@ $GLOBALS['Рефлексы'] = [
 $GLOBALS['Места']    = [
     '1' => [
         'Смысл'    => 'Память ядра',
-        'Роль'     => ['Инкапсуляция'=>'all'],
+        'Роль'     => ['Вместилище'=>'all'],
         'Связь'    => false,
         'Вложение' => [
             '1.1' => [
                 'Смысл'    => 'Параметры ядра',
-                'Роль'     => ['Инкапсуляция'=>'all'],
+                'Роль'     => ['Вместилище'=>'all'],
                 'Связь'    => false,
                 'Вложение' => [
                     '1.1.1' => [
@@ -238,7 +238,7 @@ $GLOBALS['Реакции']  = [
                         $keys = array_keys($opportunities['rights']);
                         $encapsulation = $keys[0];
 
-                        /*если есть особая инкапсуляция*/
+                        /*если есть особая Вместилище*/
                         if(preg_match('/(constant|variation)/',$encapsulation)){
 
                             $encapsulation_verification = [];
@@ -254,11 +254,11 @@ $GLOBALS['Реакции']  = [
                                 ]);
                             }
 
-                            /*инкапсуляция OR сработала*/
+                            /*Вместилище OR сработала*/
                             if(preg_match('/(variation)/',$encapsulation) and in_array(true,$encapsulation_verification)){
                                 $verification = true;
                             }
-                            /*инкапсуляция AND сработала*/
+                            /*Вместилище AND сработала*/
                             else if(preg_match('/(constant)/',$encapsulation) and !in_array(false,$encapsulation_verification)){
                                 $verification = true;
                             }
@@ -367,7 +367,7 @@ $GLOBALS['Реакции']  = [
                         },
                         /*алгоритм активации ролей*/
                         'activation_roles' => [
-                            'Инкапсуляция' => [
+                            'Вместилище' => [
                                 /*обозначение категории*/
                                 'all' => function($opportunities = []){
                                     /*ничего не делаем*/
