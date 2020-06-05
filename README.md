@@ -419,6 +419,7 @@
 ![](./Картинки/Общение.png) <a target="_blank" href="https://www.youtube.com/watch?v=VgH-R3puQes">Ефим Гринкруг: что такое программная инженерия / проектирование</a><br>
 ![](./Картинки/Общение.png) <a target="_blank" href="https://www.youtube.com/watch?v=fwlNqJudtHk">Юлия Пучнина: использование компонентной архитектуры в веб-приложениях / архитектирование</a><br>
 ![](./Картинки/Общение.png) <a target="_blank" href="https://www.youtube.com/watch?v=mc7EMdyawBk">Игорь Алексеенко: классические приёмы программирования во фронтенде / дизайнирование</a><br>
+![](./Картинки/Общение.png) <a target="_blank" href="https://www.youtube.com/watch?v=d7-Z0nZejYM">XP NRG: о бите и кубите</a><br>
 
 Проект поддерживают:
 
