@@ -4,7 +4,7 @@
 
 <h3>Предисловие</h3>
 
-Применяя root порядок (**Conditions, Space, Distribution и Realization**) вы будете уверены в том, что код будет модульным. 
+Применяя root порядок (**Conditions, Resource, Space, Distribution и Realization**) вы будете уверены в том, что код будет модульным. 
 
 ![](./Картинки/Энтузиазм-2.jpg)
 
